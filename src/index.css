@@ -1,3 +1,5 @@
+@import url(./blocks/card/__status/_online/card__status_online.css);
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
