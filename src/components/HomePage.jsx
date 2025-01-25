@@ -1,14 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Card from './Card';
+import axios from 'axios';
 
 export default function HomePage() {
   const [users, setUsers] = useState([]);
   useEffect(() => {
-    fetch('https://rickandmortyapi.com/api/character')
-      .then(response => response.json())
-      .then(data => setUsers(data.results));
-  }, []);
+    axios
+      .get('https://rickandmortyapi.com/api/character')
+      .then(response => setUsers(response.data.results));
+  });
 
   return (
     <>
