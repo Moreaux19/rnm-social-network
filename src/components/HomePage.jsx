@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
 import Card from './Card';
 import axios from 'axios';
 
@@ -14,7 +13,7 @@ export default function HomePage() {
   return (
     <>
       {users.map(user => (
-        <Card user={user} />
+        <Card key={user.id} user={user} />
       ))}
       <div>
         <p>Footer item</p>
